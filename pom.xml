@@ -19,20 +19,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
             <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -45,39 +45,39 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
-            <version>LATEST</version>
+            <version>5.3.3.RELEASE</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
-            <version>LATEST</version>
+            <version>2.3.1.RELEASE</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.session/spring-session-jdbc -->
@@ -95,13 +95,13 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>LATEST</version>
+            <version>42.2.14</version>
         </dependency>
 
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>LATEST</version>
+            <version>6.5.0</version>
         </dependency>
 
         <dependency>
@@ -117,6 +117,26 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <configuration>
+                    <assembleDirectory>target</assembleDirectory>
+                    <programs>
+                        <program>
+                            <mainClass>com.example.servingwebcontent.ServingWebContentApplication</mainClass>
+                            <name>worker</name>
+                        </program>
+                    </programs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase><goals><goal>assemble</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.1.4</version>
@@ -125,7 +145,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>LATEST</version>
+                <version>2.3.0.RELEASE</version>
             </plugin>
 
             <plugin>
