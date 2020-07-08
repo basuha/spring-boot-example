@@ -1,1 +1,1 @@
-worker: sh target/bin/web
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.example.servingwebcontent.ServingWebContentApplication
