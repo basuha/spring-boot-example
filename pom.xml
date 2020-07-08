@@ -146,7 +146,7 @@
                     <programs>
                         <program>
                             <mainClass>com.example.servingwebcontent.ServingWebContentApplication</mainClass>
-                            <name>worker</name>
+                            <name>web</name>
                         </program>
                     </programs>
                 </configuration>
